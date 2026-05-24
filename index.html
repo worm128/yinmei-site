@@ -496,7 +496,7 @@
         </div>
         <div class="relative max-w-4xl mx-auto">
             <div class="absolute inset-0 bg-gradient-to-r from-primary-100/30 to-purple-100/30 rounded-3xl blur-3xl"></div>
-            <img src="吟美流程图2.4.1.png" alt="AI吟美技术架构图" class="relative rounded-2xl shadow-lg border border-slate-200 w-full"
+            <img src="吟美流程图2.4.1.png" alt="AI吟美技术架构图" onclick="openImageModal('吟美流程图2.4.1.png')" class="relative rounded-2xl shadow-lg border border-slate-200 w-full cursor-zoom-in hover:shadow-xl transition-shadow"
                  onerror="this.parentElement.innerHTML='<div class=\'relative bg-surface-50 rounded-2xl border border-slate-200 p-12 text-center\'><svg class=\'w-16 h-16 mx-auto text-slate-300 mb-4\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' viewBox=\'0 0 24 24\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' d=\'M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2\'/></svg><p class=\'text-slate-400\'>技术架构图</p></div>'">
         </div>
         <!-- System Modules -->
@@ -1270,9 +1270,47 @@
             if (!menu.classList.contains('hidden')) {
                 toggleMobileMenu();
             }
+            // Also close image modal if open
+            const modal = document.getElementById('image-modal');
+            if (modal.classList.contains('active')) {
+                closeImageModal();
+            }
         }
     });
+
+    // ==================== IMAGE MODAL ====================
+    function openImageModal(src) {
+        const modal = document.getElementById('image-modal');
+        const img = document.getElementById('image-modal-img');
+        img.src = src;
+        img.alt = src;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeImageModal(event) {
+        // Only close if clicking the backdrop (not the image) or called without event
+        if (event && event.target !== event.currentTarget) return;
+        const modal = document.getElementById('image-modal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 </script>
+
+<!-- ==================== IMAGE MODAL ==================== -->
+<div id="image-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4" onclick="closeImageModal(event)">
+  <button onclick="closeImageModal()" class="absolute top-4 right-4 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors z-10" title="关闭">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M6 18L18 6"/></svg>
+  </button>
+  <img id="image-modal-img" src="" alt="" class="max-w-[95vw] max-h-[90vh] rounded-2xl shadow-2xl object-contain" onclick="event.stopPropagation()">
+</div>
+
+<style>
+  #image-modal { display: none; }
+  #image-modal.active { display: flex; animation: modalFadeIn 0.2s ease-out; }
+  @keyframes modalFadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes modalFadeOut { from { opacity: 1; } to { opacity: 0; } }
+</style>
 
 </body>
 </html>
