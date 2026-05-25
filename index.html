@@ -94,12 +94,11 @@
         .qr-popup {
             opacity: 0;
             visibility: hidden;
-            transform: translateY(10px);
             transition: all 0.3s ease;
             position: absolute;
-            top: 100%;
+            bottom: 100%;
             left: 50%;
-            transform: translate(-50%, 10px);
+            transform: translate(-50%, -10px);
             z-index: 50;
         }
 
@@ -679,7 +678,7 @@
                            target="_blank" rel="noopener" class="block w-full text-center btn-gradient text-white py-3.5 rounded-xl font-semibold text-sm transition-all">
                             <span data-i18n="buy_now">立即购买</span>
                         </a>
-                        <div class="qr-popup bg-white rounded-2xl shadow-2xl border border-slate-200 p-5 mt-3">
+                        <div class="qr-popup bg-white rounded-2xl shadow-2xl border border-slate-200 p-5 mb-3 w-56">
                             <div id="qrcode-plan1" class="flex justify-center"></div>
                             <p class="text-xs text-slate-400 text-center mt-3" data-i18n="qr_hint">扫码前往B站商店购买</p>
                         </div>
@@ -738,7 +737,7 @@
                            class="block w-full text-center bg-primary-600 hover:bg-primary-700 text-white py-3.5 rounded-xl font-semibold text-sm transition-all shadow-lg shadow-primary-200">
                             <span data-i18n="buy_now">立即购买</span>
                         </a>
-                        <div class="qr-popup bg-white rounded-2xl shadow-2xl border border-slate-200 p-5 mt-3">
+                        <div class="qr-popup bg-white rounded-2xl shadow-2xl border border-slate-200 p-5 mb-3 w-56">
                             <div id="qrcode-plan2" class="flex justify-center"></div>
                             <p class="text-xs text-slate-400 text-center mt-3" data-i18n="qr_hint">扫码前往B站商店购买</p>
                         </div>
@@ -796,7 +795,7 @@
                            target="_blank" rel="noopener" class="block w-full text-center btn-outline py-3.5 rounded-xl font-semibold text-sm transition-all">
                             <span data-i18n="buy_now">立即购买</span>
                         </a>
-                        <div class="qr-popup bg-white rounded-2xl shadow-2xl border border-slate-200 p-5 mt-3">
+                        <div class="qr-popup bg-white rounded-2xl shadow-2xl border border-slate-200 p-5 mb-3 w-56">
                             <div id="qrcode-plan3" class="flex justify-center"></div>
                             <p class="text-xs text-slate-400 text-center mt-3" data-i18n="qr_hint">扫码前往B站商店购买</p>
                         </div>
@@ -1225,8 +1224,8 @@
         try {
             const qr = new QRCode(container, {
                 text: url,
-                width: 200,
-                height: 200,
+                width: 280,
+                height: 280,
                 colorDark: '#000000',
                 colorLight: '#ffffff',
                 correctLevel: QRCode.CorrectLevel.H
@@ -1240,7 +1239,7 @@
                 const size = 200;
                 const logoImg = new Image();
                 logoImg.onload = function () {
-                    const logoSize = 40;
+                    const logoSize = 56;
                     const logoX = (size - logoSize) / 2;
                     const logoY = (size - logoSize) / 2;
                     ctx.fillStyle = '#FFFFFF';
