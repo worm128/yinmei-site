@@ -6,8 +6,7 @@
     <title>AI吟美 - 一站式人工智能互动平台</title>
     <meta name="description" content="AI吟美是一站式人工智能互动平台，聚合直播、QQ机器人、桌宠、大模型工具，轻量级AI，开箱即用。">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
-    <script>
+      <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -92,6 +91,7 @@
         }
 
         .qr-popup {
+            width: 200px;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
@@ -678,8 +678,13 @@
                            target="_blank" rel="noopener" class="block w-full text-center btn-gradient text-white py-3.5 rounded-xl font-semibold text-sm transition-all">
                             <span data-i18n="buy_now">立即购买</span>
                         </a>
-                        <div class="qr-popup bg-white rounded-2xl shadow-2xl border border-slate-200 p-5 mb-3 w-56">
-                            <div id="qrcode-plan1" class="flex justify-center"></div>
+                        <div class="qr-popup bg-white rounded-2xl shadow-2xl border border-slate-200 p-5 mb-3">
+                            <div class="relative inline-block mx-auto">
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fmall.bilibili.com%2Fneul-next%2Fdetailuniversal%2Fdetail.html%3Fpage%3Ddetailuniversal_detail%26itemsId%3D40254757" class="w-52" alt="QR Code">
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-md p-0.5">
+                                    <img src="ymlogo.png" class="w-7 h-7 rounded" alt="">
+                                </div>
+                            </div>
                             <p class="text-xs text-slate-400 text-center mt-3" data-i18n="qr_hint">扫码前往B站商店购买</p>
                         </div>
                     </div>
@@ -737,8 +742,13 @@
                            class="block w-full text-center bg-primary-600 hover:bg-primary-700 text-white py-3.5 rounded-xl font-semibold text-sm transition-all shadow-lg shadow-primary-200">
                             <span data-i18n="buy_now">立即购买</span>
                         </a>
-                        <div class="qr-popup bg-white rounded-2xl shadow-2xl border border-slate-200 p-5 mb-3 w-56">
-                            <div id="qrcode-plan2" class="flex justify-center"></div>
+                        <div class="qr-popup bg-white rounded-2xl shadow-2xl border border-slate-200 p-5 mb-3">
+                            <div class="relative inline-block mx-auto">
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fmall.bilibili.com%2Fneul-next%2Fdetailuniversal%2Fdetail.html%3Fpage%3Ddetailuniversal_detail%26itemsId%3D12738795" class="w-52" alt="QR Code">
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-md p-0.5">
+                                    <img src="ymlogo.png" class="w-7 h-7 rounded" alt="">
+                                </div>
+                            </div>
                             <p class="text-xs text-slate-400 text-center mt-3" data-i18n="qr_hint">扫码前往B站商店购买</p>
                         </div>
                     </div>
@@ -796,8 +806,13 @@
                            target="_blank" rel="noopener" class="block w-full text-center btn-outline py-3.5 rounded-xl font-semibold text-sm transition-all">
                             <span data-i18n="buy_now">立即购买</span>
                         </a>
-                        <div class="qr-popup bg-white rounded-2xl shadow-2xl border border-slate-200 p-5 mb-3 w-56">
-                            <div id="qrcode-plan3" class="flex justify-center"></div>
+                        <div class="qr-popup bg-white rounded-2xl shadow-2xl border border-slate-200 p-5 mb-3">
+                            <div class="relative inline-block mx-auto">
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fmall.bilibili.com%2Fneul-next%2Fdetailuniversal%2Fdetail.html%3Fpage%3Ddetailuniversal_detail%26itemsId%3D12988851" class="w-52" alt="QR Code" >
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-md p-0.5">
+                                    <img src="ymlogo.png" class="w-7 h-7 rounded" alt="">
+                                </div>
+                            </div>
                             <p class="text-xs text-slate-400 text-center mt-3" data-i18n="qr_hint">扫码前往B站商店购买</p>
                         </div>
                     </div>
@@ -1216,51 +1231,6 @@
         }
     }
 
-    // ==================== QR CODE GENERATION ====================
-    function generateQR(containerId, url) {
-        const container = document.getElementById(containerId);
-        if (!container) return;
-
-        // Use qrcodejs library to generate real QR code
-        try {
-            const qr = new QRCode(container, {
-                text: url,
-                width: 280,
-                height: 280,
-                colorDark: '#000000',
-                colorLight: '#ffffff',
-                correctLevel: QRCode.CorrectLevel.H
-            });
-
-            // Overlay logo in center after QR is rendered
-            setTimeout(function () {
-                const canvas = container.querySelector('canvas');
-                if (!canvas) return;
-                const ctx = canvas.getContext('2d');
-                const size = 200;
-                const logoImg = new Image();
-                logoImg.onload = function () {
-                    const logoSize = 56;
-                    const logoX = (size - logoSize) / 2;
-                    const logoY = (size - logoSize) / 2;
-                    ctx.fillStyle = '#FFFFFF';
-                    ctx.fillRect(logoX - 3, logoY - 3, logoSize + 6, logoSize + 6);
-                    ctx.drawImage(logoImg, logoX, logoY, logoSize, logoSize);
-                };
-                logoImg.src = 'ymlogo.png';
-            }, 200);
-        } catch (e) {
-            // Fallback: show a simple placeholder
-            container.innerHTML = '<div class="w-[200px] h-[200px] bg-slate-100 rounded-lg flex items-center justify-center"><span class="text-slate-400 text-xs">QR Code</span></div>';
-        }
-    }
-
-    // Initialize QR codes
-    document.addEventListener('DOMContentLoaded', function () {
-        generateQR('qrcode-plan1', 'https://mall.bilibili.com/neul-next/detailuniversal/detail.html?page=detailuniversal_detail&itemsId=40254757&loadingShow=1&noTitleBar=1');
-        generateQR('qrcode-plan2', 'https://mall.bilibili.com/neul-next/detailuniversal/detail.html?page=detailuniversal_detail&itemsId=12738795&loadingShow=1&noTitleBar=1');
-        generateQR('qrcode-plan3', 'https://mall.bilibili.com/neul-next/detailuniversal/detail.html?page=detailuniversal_detail&itemsId=12988851&loadingShow=1&noTitleBar=1');
-    });
 
     // ==================== NAVBAR SCROLL EFFECT ====================
     window.addEventListener('scroll', function () {
