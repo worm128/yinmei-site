@@ -711,14 +711,55 @@
 
             <!-- Plan 2: Monthly -->
             <div class="card-hover bg-white rounded-3xl border-2 border-primary-500 overflow-hidden flex flex-col relative ring-4 ring-primary-100/50">
-                <div class="absolute top-0 right-0 bg-primary-600 text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl" data-i18n="plan2_badge">热门推荐</div>
+                <div class="absolute top-0 right-0 bg-primary-600 text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl" data-i18n="plan2_badge">已下架</div>
                 <div class="p-8 flex-1">
-                    <h3 class="text-xl font-bold text-slate-900" data-i18n="plan2_name">月卡</h3>
+                    <h3 class="text-xl font-bold text-slate-900 line-through" data-i18n="plan2_name">月卡</h3>
                     <p class="text-sm text-slate-500 mt-1" data-i18n="plan2_desc">解锁高级AI能力</p>
                     <div class="mt-6 flex items-baseline gap-1">
-                        <span class="text-5xl font-extrabold text-slate-900">28</span>
+                        <span class="text-5xl font-extrabold text-slate-900 line-through">28</span>
+                        <span class="text-lg text-slate-500 line-through">元</span>
+                        <span class="text-sm text-slate-400 line-through" data-i18n="plan2_period">/ 月</span>
+                    </div>
+                    <ul class="mt-8 space-y-3">
+                        <li class="flex items-start gap-3 text-sm text-slate-600">
+                            <svg class="w-5 h-5 text-primary-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span data-i18n="plan2_feat1">之前购买月卡的小伙伴，可以来程序猿这里领取吟美核心20年秘钥，或者用作购买年卡28元抵扣</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="px-8 pb-8">
+                    <div class="qr-hover-area">
+                        <a href="https://mall.bilibili.com/neul-next/detailuniversal/detail.html?page=detailuniversal_detail&itemsId=12738795&loadingShow=1&noTitleBar=1#noReffer=true&msource=merchant_share"
+                           target="_blank" rel="noopener"
+                           class="block w-full text-center bg-gray-600 hover:bg-gray-700 text-white py-3.5 rounded-xl font-semibold text-sm transition-all shadow-lg shadow-primary-200">
+                            <span data-i18n="buy_now">商品下架</span>
+                        </a>
+                        <div class="qr-popup bg-white rounded-2xl shadow-2xl border border-slate-200 p-5 mb-3">
+                            <div class="relative inline-block mx-auto">
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fmall.bilibili.com%2Fneul-next%2Fdetailuniversal%2Fdetail.html%3Fpage%3Ddetailuniversal_detail%26itemsId%3D12738795" class="w-52" alt="QR Code">
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-md p-0.5">
+                                    <img src="ymlogo.png" class="w-7 h-7 rounded" alt="">
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-400 text-center mt-3" data-i18n="qr_hint">扫码前往B站商店购买</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plan 3: Annual -->
+            <div class="card-hover bg-white rounded-3xl border border-slate-200 overflow-hidden flex flex-col relative">
+                <div class="absolute top-0 right-0 bg-gradient-to-r from-violet-500 to-purple-600 text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl" data-i18n="plan3_badge">更优惠</div>
+                <div class="p-8 flex-1">
+                    <h3 class="text-xl font-bold text-slate-900" data-i18n="plan3_name">永久满血</h3>
+                    <p class="text-sm text-slate-500 mt-1" data-i18n="plan3_desc">永久满血吟美功能，功能完美释放</p>
+                    <div class="mt-6 flex items-baseline gap-2">
+                        <span class="text-5xl font-extrabold text-slate-900">288</span>
                         <span class="text-lg text-slate-500">元</span>
-                        <span class="text-sm text-slate-400" data-i18n="plan2_period">/ 月</span>
+                        <span class="text-xl text-slate-400 line-through">336元</span>
+                        <span class="text-sm text-slate-400" data-i18n="plan3_period">/ 永久</span>
                     </div>
                     <ul class="mt-8 space-y-3">
                         <li class="flex items-start gap-3 text-sm text-slate-600">
@@ -750,71 +791,6 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                             </svg>
                             <span data-i18n="plan2_feat5">长期记忆 + 直播抽奖</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="px-8 pb-8">
-                    <div class="qr-hover-area">
-                        <a href="https://mall.bilibili.com/neul-next/detailuniversal/detail.html?page=detailuniversal_detail&itemsId=12738795&loadingShow=1&noTitleBar=1#noReffer=true&msource=merchant_share"
-                           target="_blank" rel="noopener"
-                           class="block w-full text-center bg-primary-600 hover:bg-primary-700 text-white py-3.5 rounded-xl font-semibold text-sm transition-all shadow-lg shadow-primary-200">
-                            <span data-i18n="buy_now">立即购买</span>
-                        </a>
-                        <div class="qr-popup bg-white rounded-2xl shadow-2xl border border-slate-200 p-5 mb-3">
-                            <div class="relative inline-block mx-auto">
-                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fmall.bilibili.com%2Fneul-next%2Fdetailuniversal%2Fdetail.html%3Fpage%3Ddetailuniversal_detail%26itemsId%3D12738795" class="w-52" alt="QR Code">
-                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-md p-0.5">
-                                    <img src="ymlogo.png" class="w-7 h-7 rounded" alt="">
-                                </div>
-                            </div>
-                            <p class="text-xs text-slate-400 text-center mt-3" data-i18n="qr_hint">扫码前往B站商店购买</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Plan 3: Annual -->
-            <div class="card-hover bg-white rounded-3xl border border-slate-200 overflow-hidden flex flex-col relative">
-                <div class="absolute top-0 right-0 bg-gradient-to-r from-violet-500 to-purple-600 text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl" data-i18n="plan3_badge">更优惠</div>
-                <div class="p-8 flex-1">
-                    <h3 class="text-xl font-bold text-slate-900" data-i18n="plan3_name">永久满血</h3>
-                    <p class="text-sm text-slate-500 mt-1" data-i18n="plan3_desc">永久满血吟美功能，比月卡更便宜</p>
-                    <div class="mt-6 flex items-baseline gap-2">
-                        <span class="text-5xl font-extrabold text-slate-900">288</span>
-                        <span class="text-lg text-slate-500">元</span>
-                        <span class="text-xl text-slate-400 line-through">336元</span>
-                        <span class="text-sm text-slate-400" data-i18n="plan3_period">/ 永久</span>
-                    </div>
-                    <ul class="mt-8 space-y-3">
-                        <li class="flex items-start gap-3 text-sm text-slate-600">
-                            <svg class="w-5 h-5 text-purple-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span data-i18n="plan3_feat1">包含月卡全部功能</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600">
-                            <svg class="w-5 h-5 text-purple-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span data-i18n="plan3_feat2">永久畅享，无需每月续费</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600">
-                            <svg class="w-5 h-5 text-purple-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span data-i18n="plan3_feat3">比月卡方案节省更多</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600">
-                            <svg class="w-5 h-5 text-purple-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span data-i18n="plan3_feat4">优先获取新功能更新</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600">
-                            <svg class="w-5 h-5 text-purple-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span data-i18n="plan3_feat5">专属技术支持通道</span>
                         </li>
                     </ul>
                 </div>
