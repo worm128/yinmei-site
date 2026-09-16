@@ -37,6 +37,18 @@
             background-clip: text;
         }
 
+        .btn-pink {
+            background: linear-gradient(135deg, #f63ba5 0%, #ee2e69 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-pink:hover {
+            background: linear-gradient(135deg, #fa4aae 0%, #fc497e 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(253, 92, 185, 0.4);
+        }
+
+
         .btn-gradient {
             background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
             transition: all 0.3s ease;
@@ -714,34 +726,52 @@
 
             <!-- Plan 2: Monthly -->
             <div class="card-hover bg-white rounded-3xl border-2 border-primary-500 overflow-hidden flex flex-col relative ring-4 ring-primary-100/50">
-                <div class="absolute top-0 right-0 bg-primary-600 text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl" data-i18n="plan2_badge">已下架</div>
+                <div class="absolute top-0 right-0 bg-primary-600 text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl" data-i18n="plan2_badge">永久免费</div>
                 <div class="p-8 flex-1">
-                    <h3 class="text-xl font-bold text-slate-900 line-through" data-i18n="plan2_name">月卡</h3>
-                    <p class="text-sm text-slate-500 mt-1 line-through" data-i18n="plan2_desc">解锁高级AI能力</p>
+                    <h3 class="text-xl font-bold text-slate-900" data-i18n="plan2_name">唱歌功能</h3>
+                    <p class="text-sm text-slate-500 mt-1" data-i18n="plan2_desc">解锁高级唱歌能力</p>
                     <div class="mt-6 flex items-baseline gap-1">
-                        <span class="text-5xl font-extrabold text-slate-900 line-through">28</span>
-                        <span class="text-lg text-slate-500 line-through">元</span>
-                        <span class="text-sm text-slate-400 line-through" data-i18n="plan2_period">/ 月</span>
+                        <span class="text-5xl font-extrabold text-slate-900">138</span>
+                        <span class="text-lg text-slate-500">元</span>
+                        <span class="text-sm text-slate-400" data-i18n="plan2_period">/ 永久</span>
                     </div>
                     <ul class="mt-8 space-y-3">
                         <li class="flex items-start gap-3 text-sm text-slate-600">
-                            <svg class="w-5 h-5 text-primary-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                             </svg>
-                            <span data-i18n="plan2_feat1">之前购买月卡的小伙伴，可以来程序猿这里领取吟美核心20年秘钥，或者用作购买永久卡28元抵扣</span>
+                            <span>AI翻唱能力</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600">
+                            <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>歌曲列表展示</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600">
+                            <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>歌词高亮跟随</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600">
+                            <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>后续开发：多AI合唱</span>
                         </li>
                     </ul>
                 </div>
                 <div class="px-8 pb-8">
                     <div class="qr-hover-area">
-                        <a href="https://mall.bilibili.com/neul-next/detailuniversal/detail.html?page=detailuniversal_detail&itemsId=12738795&loadingShow=1&noTitleBar=1#noReffer=true&msource=merchant_share"
+                        <a href="https://mall.bilibili.com/neul-next/detailuniversal/detail.html?page=detailuniversal_detail&itemsId=13024783&loadingShow=1&noTitleBar=1#noReffer=true&msource=merchant_share"
                            target="_blank" rel="noopener"
-                           class="block w-full text-center bg-gray-600 hover:bg-gray-700 text-white py-3.5 rounded-xl font-semibold text-sm transition-all shadow-lg shadow-primary-200">
-                            <span data-i18n="buy_now">商品下架</span>
+                           class="block w-full text-center btn-pink text-white py-3.5 rounded-xl font-semibold text-sm transition-all">
+                            <span data-i18n="buy_now">立即购买</span>
                         </a>
                         <div class="qr-popup bg-white rounded-2xl shadow-2xl border border-slate-200 p-5 mb-3">
                             <div class="relative inline-block mx-auto">
-                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fmall.bilibili.com%2Fneul-next%2Fdetailuniversal%2Fdetail.html%3Fpage%3Ddetailuniversal_detail%26itemsId%3D12738795" class="w-52" alt="QR Code">
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fmall.bilibili.com%2Fneul-next%2Fdetailuniversal%2Fdetail.html%3Fpage%3Ddetailuniversal_detail%26itemsId%3D13024783" class="w-52" alt="QR Code">
                                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-md p-0.5">
                                     <img src="ymlogo.png" class="w-7 h-7 rounded" alt="">
                                 </div>
